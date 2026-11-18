@@ -1,0 +1,75 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f1115;
+  color: #f0f2f5;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #1a1d24;
+  border: 1px solid #2b303b;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #4caf50;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  background: #2b303b;
+  color: #8bc34a;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card h3 { margin-bottom: 8px; }
+.card p { font-size: 14px; color: #9aa0a6; }
+
+#player {
+  display: none;
+  width: 100%;
+  max-width: 1100px;
+  height: 82vh;
+  margin: 0 auto;
+  border: 1px solid #2b303b;
+  border-radius: 12px;
+  background: #000;
+}
+
+#back-btn {
+  display: none;
+  background: #2b303b;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#back-btn:hover { background: #3c4250; }

@@ -14,27 +14,44 @@
   </header>
 
   <main>
-    <!-- Game Selection Grid -->
-    <div class="grid" id="menu">
-      <div class="card" onclick="launch('games/2048/index.html')">
-        <div class="badge">Puzzle</div>
-        <h3>2048</h3>
-        <p>Slide numbered tiles to reach 2048.</p>
-      </div>
-
-      <!-- Copy and paste this card block when you add more games -->
-      <div class="card" onclick="launch('games/snake/index.html')">
-        <div class="badge">Classic</div>
-        <h3>Neon Snake</h3>
-        <p>Eat the food and avoid the walls.</p>
-      </div>
-    </div>
+    <!-- Game Selection Grid (Populated automatically via JS) -->
+    <div class="grid" id="menu"></div>
 
     <!-- Game Screen -->
     <iframe id="player" allowfullscreen></iframe>
   </main>
 
   <script>
+    // Fetch and render the games from your JSON file on page load
+    async function loadGames() {
+      const menu = document.getElementById('menu');
+
+      try {
+        // Make sure 'games.json' matches the exact name/path of your file
+        const response = await fetch('games.json');
+        if (!response.ok) throw new Error('Could not load games.json');
+        
+        const games = await response.json();
+
+        games.forEach(game => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.onclick = () => launch(game.path);
+
+          card.innerHTML = `
+            <div class="badge">${game.badge}</div>
+            <h3>${game.title}</h3>
+            <p>${game.description}</p>
+          `;
+
+          menu.appendChild(card);
+        });
+      } catch (error) {
+        console.error(error);
+        menu.innerHTML = `<p>Failed to load games. Make sure you are running this on a local server.</p>`;
+      }
+    }
+
     function launch(path) {
       document.getElementById('menu').style.display = 'none';
       document.getElementById('back-btn').style.display = 'inline-block';
@@ -50,6 +67,9 @@
       document.getElementById('back-btn').style.display = 'none';
       document.getElementById('menu').style.display = 'grid';
     }
+
+    // Run on startup
+    loadGames();
   </script>
 
 </body>

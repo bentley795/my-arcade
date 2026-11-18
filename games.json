@@ -1,0 +1,81 @@
+{
+  "library_metadata": {
+    "version": "1.0",
+    "last_updated": "2026-11-18",
+    "total_games": 3
+  },
+  "games": [
+    {
+      "id": "game_001",
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "developer": "Nintendo EPD",
+      "publisher": "Nintendo",
+      "release_year": 2023,
+      "genres": [
+        "Action-Adventure",
+        "Open World"
+      ],
+      "platforms": [
+        "Nintendo Switch"
+      ],
+      "status": "Completed",
+      "rating": 9.5,
+      "hours_played": 115.5,
+      "multiplayer": false,
+      "tags": [
+        "fantasy",
+        "exploration",
+        "puzzle"
+      ]
+    },
+    {
+      "id": "game_002",
+      "title": "Baldur's Gate 3",
+      "developer": "Larian Studios",
+      "publisher": "Larian Studios",
+      "release_year": 2023,
+      "genres": [
+        "RPG",
+        "Strategy"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X/S"
+      ],
+      "status": "Playing",
+      "rating": 9.8,
+      "hours_played": 84,
+      "multiplayer": true,
+      "tags": [
+        "turn-based",
+        "story-rich",
+        "co-op"
+      ]
+    },
+    {
+      "id": "game_003",
+      "title": "Hades II",
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "release_year": 2025,
+      "genres": [
+        "Roguelike",
+        "Action"
+      ],
+      "platforms": [
+        "PC",
+        "Nintendo Switch"
+      ],
+      "status": "Backlog",
+      "rating": null,
+      "hours_played": 0,
+      "multiplayer": false,
+      "tags": [
+        "mythology",
+        "fast-paced",
+        "indie"
+      ]
+    }
+  ]
+}

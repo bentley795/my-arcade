@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🕹️ My Arcade</h1>
+    <button id="back-btn" onclick="closeGame()">← Back to Games</button>
+  </header>
+
+  <main>
+    <!-- Game Selection Grid -->
+    <div class="grid" id="menu">
+      <div class="card" onclick="launch('games/2048/index.html')">
+        <div class="badge">Puzzle</div>
+        <h3>2048</h3>
+        <p>Slide numbered tiles to reach 2048.</p>
+      </div>
+
+      <!-- Copy and paste this card block when you add more games -->
+      <div class="card" onclick="launch('games/snake/index.html')">
+        <div class="badge">Classic</div>
+        <h3>Neon Snake</h3>
+        <p>Eat the food and avoid the walls.</p>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <iframe id="player" allowfullscreen></iframe>
+  </main>
+
+  <script>
+    function launch(path) {
+      document.getElementById('menu').style.display = 'none';
+      document.getElementById('back-btn').style.display = 'inline-block';
+      const player = document.getElementById('player');
+      player.src = path;
+      player.style.display = 'block';
+    }
+
+    function closeGame() {
+      const player = document.getElementById('player');
+      player.src = '';
+      player.style.display = 'none';
+      document.getElementById('back-btn').style.display = 'none';
+      document.getElementById('menu').style.display = 'grid';
+    }
+  </script>
+
+</body>
+</html>
